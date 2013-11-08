@@ -68,7 +68,8 @@ HEADERS += ui_clone-tasks-dialog.h \
            src/utils/process.h \
            src/utils/rsa.h \
            src/utils/utils.h \
-           third_party/QtAwesome/QtAwesome.h
+           third_party/QtAwesome/QtAwesome.h \
+    src/ui/tips-dialog.h
 FORMS += ui/clone-tasks-dialog.ui \
          ui/cloud-view.ui \
          ui/create-repo-dialog.ui \
@@ -78,7 +79,9 @@ FORMS += ui/clone-tasks-dialog.ui \
          ui/repo-detail-dialog.ui \
          ui/server-status-dialog.ui \
          ui/settings-dialog.ui \
-         ui/welcome-dialog.ui
+         ui/welcome-dialog.ui \
+    src/ui/tips-dialog.ui \
+    ui/tips-dialog.ui
 SOURCES += src/account-mgr.cpp \
            src/ccnet-init.cpp \
            src/configurator.cpp \
@@ -120,7 +123,8 @@ SOURCES += src/account-mgr.cpp \
            src/utils/log.c \
            src/utils/rsa.cpp \
            src/utils/utils.cpp \
-           third_party/QtAwesome/QtAwesome.cpp
+           third_party/QtAwesome/QtAwesome.cpp \
+    src/ui/tips-dialog.cpp
 RESOURCES += seafile-client.qrc third_party/QtAwesome/QtAwesome.qrc
 TRANSLATIONS += i18n/seafile_de_DE.ts \
                 i18n/seafile_fr_FR.ts \

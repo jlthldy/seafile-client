@@ -63,6 +63,7 @@ SET(moc_headers
   src/ui/clone-tasks-table-model.h
   src/ui/clone-tasks-table-view.h
   src/ui/server-status-dialog.h
+  src/ui/tips-dialog.h
   third_party/QtAwesome/QtAwesome.h
 )
 
@@ -82,6 +83,7 @@ SET(ui_files
   ui/cloud-view.ui
   ui/clone-tasks-dialog.ui
   ui/server-status-dialog.ui
+  ui/tips-dialog.ui
 )
 
 # RESOURCES
@@ -188,6 +190,7 @@ SET(seafile_client_sources
   src/ui/clone-tasks-table-model.cpp
   src/ui/clone-tasks-table-view.cpp
   src/ui/server-status-dialog.cpp
+  src/ui/tips-dialog.cpp
   third_party/QtAwesome/QtAwesome.cpp
   ${platform_specific_sources}
 )
