@@ -22,6 +22,7 @@
 #include "ui/settings-dialog.h"
 #include "ui/welcome-dialog.h"
 #include "ui/login-dialog.h"
+#include "ui/tips-dialog.h"
 #include "seafile-applet.h"
 
 namespace {
@@ -87,7 +88,9 @@ void SeafileApplet::start()
         // WelcomeDialog welcome_dialog;
         // welcome_dialog.exec();
         LoginDialog login_dialog;
-        login_dialog.exec();
+        if (login_dialog.exec() == QDialog::Accepted) {
+            popTipsDialog();
+        }
     }
 
     daemon_mgr_->startCcnetDaemon();
@@ -112,6 +115,15 @@ void SeafileApplet::onDaemonStarted()
     seafApplet->settingsManager()->loadSettings();
 
     started_ = true;
+}
+
+void SeafileApplet::popTipsDialog()
+{
+    if (tips_dialog_ == NULL) {
+        tips_dialog_ = new TipsDialog;
+    }
+
+    tips_dialog_->show();
 }
 
 void SeafileApplet::exit(int code)

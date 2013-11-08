@@ -5,7 +5,6 @@
 #include "seafile-applet.h"
 #include "api/requests.h"
 #include "login-dialog.h"
-#include "tips-dialog.h"
 namespace {
 
 const QString kDefaultServerAddr1 = "https://seacloud.cc";
@@ -144,8 +143,6 @@ void LoginDialog::loginSuccess(const QString& token)
                              QMessageBox::Ok);
     } else {
         done(QDialog::Accepted);
-        TipsDialog ti;
-        ti.exec();
     }
 }
 

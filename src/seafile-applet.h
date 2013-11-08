@@ -12,7 +12,7 @@ class MessageListener;
 class SeafileTrayIcon;
 class SettingsManager;
 class SettingsDialog;
-
+class TipsDialog;
 
 /**
  * The central class of seafile-client
@@ -57,6 +57,8 @@ private slots:
     void onDaemonStarted();
 
 private:
+    void popTipsDialog();
+private:
     Q_DISABLE_COPY(SeafileApplet)
 
     void initLog();
@@ -80,6 +82,8 @@ private:
     SettingsDialog *settings_dialog_;
 
     SettingsManager *settings_mgr_;
+
+    TipsDialog* tips_dialog_;
 
     bool started_;
 

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Syncing Files</string>
+   <string>File Synchronization </string>
   </property>
   <property name="styleSheet">
    <string notr="true">QLineEdit {
@@ -43,7 +43,7 @@ min-width: 260px;
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Syncing Files</string>
+       <string>File Synchronization </string>
       </property>
      </widget>
     </item>
@@ -73,9 +73,9 @@ min-width: 260px;
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>34</y>
+     <y>44</y>
      <width>550</width>
-     <height>41</height>
+     <height>16</height>
     </rect>
    </property>
    <property name="orientation">
@@ -125,12 +125,12 @@ min-width: 260px;
       </property>
       <property name="maximumSize">
        <size>
-        <width>352</width>
-        <height>190</height>
+        <width>310</width>
+        <height>154</height>
        </size>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/seafile-download-library.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/images/seafile-client-download2.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -158,9 +158,9 @@ min-width: 260px;
   <widget class="QWidget" name="horizontalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>55</x>
      <y>250</y>
-     <width>361</width>
+     <width>491</width>
      <height>41</height>
     </rect>
    </property>
@@ -184,7 +184,8 @@ min-width: 260px;
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>description</string>
+       <string>Just download a library.
+Files in the library will be kept synchronized with those in the server.</string>
       </property>
       <property name="openExternalLinks">
        <bool>false</bool>
@@ -220,7 +221,7 @@ min-width: 260px;
    </property>
    <layout class="QVBoxLayout" name="verticalLayout"/>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -255,10 +256,10 @@ min-width: 260px;
     </item>
    </layout>
   </widget>
+  <zorder>layoutWidget</zorder>
   <zorder>widget</zorder>
   <zorder>line</zorder>
   <zorder>line_2</zorder>
-  <zorder></zorder>
   <zorder>horizontalLayoutWidget</zorder>
   <zorder>horizontalLayoutWidget_2</zorder>
   <zorder>verticalLayoutWidget</zorder>

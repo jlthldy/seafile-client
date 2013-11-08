@@ -16,6 +16,8 @@ public:
     explicit TipsDialog(QWidget *parent = 0);
     ~TipsDialog();
 
+private slots:
+    void okButtonClicked();
 private:
     Ui::TipsDialog *ui;
 };
