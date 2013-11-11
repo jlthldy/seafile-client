@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>File Synchronization </string>
+   <string>Sync Files</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QLineEdit {
@@ -43,7 +43,7 @@ min-width: 260px;
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>File Synchronization </string>
+       <string>Sync Files</string>
       </property>
      </widget>
     </item>
@@ -158,10 +158,10 @@ min-width: 260px;
   <widget class="QWidget" name="horizontalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>55</x>
+     <x>45</x>
      <y>250</y>
-     <width>491</width>
-     <height>41</height>
+     <width>471</width>
+     <height>51</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -184,7 +184,7 @@ min-width: 260px;
        <bool>true</bool>
       </property>
       <property name="text">
-       <string>Just download a library.
+       <string>To sync files,just download a library.
 Files in the library will be kept synchronized with those in the server.</string>
       </property>
       <property name="openExternalLinks">
