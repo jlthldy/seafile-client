@@ -9,6 +9,7 @@ extern "C" {
 #include <QToolButton>
 #include <QWidgetAction>
 #include <QTreeView>
+#include <QNetworkRequest>
 
 #include "QtAwesome.h"
 #include "api/requests.h"
@@ -29,6 +30,9 @@ namespace {
 
 const int kRefreshReposInterval = 1000 * 60 * 5; // 5 min
 const int kRefreshStatusInterval = 1000;
+
+const QString kActivitiesUrl = "/api2/html/events/";
+const char* kAuthorization = "Authorization";
 
 enum {
     INDEX_LOADING_VIEW = 0,
@@ -54,6 +58,8 @@ CloudView::CloudView(QWidget *parent)
     createToolBar();
     updateAccountInfoDisplay();
     prepareAccountButtonMenu();
+
+    loadActivities();
 
     mDownloadTasksInfo->setText("0");
     mDownloadTasksBtn->setIcon(awesome->icon(icon_download_alt));
@@ -412,6 +418,17 @@ void CloudView::refreshTransferRate()
 
     mUploadRate->setText(tr("%1 kB/s").arg(up_rate / 1024));
     mDownloadRate->setText(tr("%1 kB/s").arg(down_rate / 1024));
+}
+
+void CloudView::loadActivities()
+{
+    QNetworkRequest request(QUrl(currentAccount().serverUrl.toString()+kActivitiesUrl));
+    char buf[1024];
+    qsnprintf(buf, sizeof(buf), "Token %s", currentAccount().token.toUtf8().data());
+    request.setRawHeader(kAuthorization, buf);
+
+    mWebView->load(request);
+    mWebView->show();
 }
 
 void CloudView::refreshStatusBar()

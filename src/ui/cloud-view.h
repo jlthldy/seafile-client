@@ -63,6 +63,7 @@ private:
     void refreshServerStatus();
     void refreshTasksInfo();
     void refreshTransferRate();
+    void loadActivities();
 
     bool in_refresh_;
     QTimer *refresh_timer_;

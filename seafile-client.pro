@@ -154,3 +154,4 @@ macx {
 macx:LIBS += -framework Carbon -framework Cocoa
 
 QT += network
+QT += webkit

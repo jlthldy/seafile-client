@@ -28,7 +28,7 @@ ENDIF (MSYS)
 ####################
 ###### BEGIN: QT configuration
 ####################
-FIND_PACKAGE(Qt4 REQUIRED QtCore QtGui QtNetwork)
+FIND_PACKAGE(Qt4 REQUIRED QtCore QtGui QtNetwork QtWebKit)
 INCLUDE(${QT_USE_FILE})
 
 
