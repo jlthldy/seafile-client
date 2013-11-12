@@ -31,7 +31,6 @@ public:
 protected:
     void showEvent(QShowEvent *event);
     void hideEvent(QHideEvent *event);
-
 public slots:
     void showAddAccountDialog();
     void deleteAccount();

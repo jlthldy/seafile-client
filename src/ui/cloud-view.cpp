@@ -49,6 +49,7 @@ CloudView::CloudView(QWidget *parent)
     createLoadingView();
     mStack->insertWidget(INDEX_LOADING_VIEW, loading_view_);
     mStack->insertWidget(INDEX_REPOS_VIEW, repos_tree_);
+    mStack->setContentsMargins(0, 0, 0, 0);
 
     createToolBar();
     updateAccountInfoDisplay();
