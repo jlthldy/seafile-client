@@ -26,6 +26,8 @@ extern "C" {
 #include "main-window.h"
 #include "cloud-view.h"
 
+#define toCStr(_s)   ((_s).isNull() ? NULL : (_s).toUtf8().data())
+
 namespace {
 
 const int kRefreshReposInterval = 1000 * 60 * 5; // 5 min
@@ -94,6 +96,8 @@ CloudView::CloudView(QWidget *parent)
 
     connect(mDownloadTasksBtn, SIGNAL(clicked()), this, SLOT(showCloneTasksDialog()));
     connect(mServerStatusBtn, SIGNAL(clicked()), this, SLOT(showServerStatusDialog()));
+
+    connect(mWebView, SIGNAL(linkClicked(QUrl)), this, SLOT(linkClicked(QUrl)));
 }
 
 CloneTasksDialog *CloudView::cloneTasksDialog()
@@ -427,6 +431,7 @@ void CloudView::loadActivities()
     qsnprintf(buf, sizeof(buf), "Token %s", currentAccount().token.toUtf8().data());
     request.setRawHeader(kAuthorization, buf);
 
+    mWebView->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
     mWebView->load(request);
     mWebView->show();
 }
@@ -495,6 +500,11 @@ void CloudView::onRefreshClicked()
         showLoadingView();
         refreshRepos();
     }
+}
+
+void CloudView::linkClicked(const QUrl &url)
+{
+    printf("The url is: %s\n", toCStr(url.toString()));
 }
 
 void CloudView::showCreateRepoDialog()

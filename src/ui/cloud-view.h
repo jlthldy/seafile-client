@@ -48,6 +48,7 @@ private slots:
     void showServerStatusDialog();
     void onRefreshClicked();
 
+    void linkClicked(const QUrl& url);
 private:
     Q_DISABLE_COPY(CloudView)
 
